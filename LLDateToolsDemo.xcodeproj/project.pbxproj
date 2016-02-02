@@ -13,6 +13,7 @@
 		1953321C1C612D2F009A79D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1953321A1C612D2F009A79D0 /* Main.storyboard */; };
 		1953321E1C612D2F009A79D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1953321D1C612D2F009A79D0 /* Assets.xcassets */; };
 		195332211C612D2F009A79D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1953321F1C612D2F009A79D0 /* LaunchScreen.storyboard */; };
+		1953322B1C613171009A79D0 /* LLDateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1953322A1C613171009A79D0 /* LLDateTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1953321D1C612D2F009A79D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		195332201C612D2F009A79D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		195332221C612D2F009A79D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		195332291C613171009A79D0 /* LLDateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDateTools.h; sourceTree = "<group>"; };
+		1953322A1C613171009A79D0 /* LLDateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDateTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		195332101C612D2F009A79D0 /* LLDateToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				195332281C61314E009A79D0 /* LLDateTools */,
 				195332141C612D2F009A79D0 /* AppDelegate.h */,
 				195332151C612D2F009A79D0 /* AppDelegate.m */,
 				195332171C612D2F009A79D0 /* ViewController.h */,
@@ -77,6 +81,15 @@
 				195332121C612D2F009A79D0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		195332281C61314E009A79D0 /* LLDateTools */ = {
+			isa = PBXGroup;
+			children = (
+				195332291C613171009A79D0 /* LLDateTools.h */,
+				1953322A1C613171009A79D0 /* LLDateTools.m */,
+			);
+			path = LLDateTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +166,7 @@
 				195332191C612D2F009A79D0 /* ViewController.m in Sources */,
 				195332161C612D2F009A79D0 /* AppDelegate.m in Sources */,
 				195332131C612D2F009A79D0 /* main.m in Sources */,
+				1953322B1C613171009A79D0 /* LLDateTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +313,7 @@
 				195332271C612D2F009A79D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

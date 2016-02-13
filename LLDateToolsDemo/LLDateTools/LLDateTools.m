@@ -54,7 +54,7 @@
     [newComponents setYear:dateComponents.year];
     [newComponents setMonth:dateComponents.month];
     [newComponents setWeekday:dateComponents.weekday];
-    [newComponents setDay:dateComponents.day-1];
+    [newComponents setDay:dateComponents.day];
     [newComponents setHour:0];
     [newComponents setMinute:0];
     [newComponents setSecond:0];
@@ -76,7 +76,7 @@
 - (NSString*)weekdayStringWithDate:(NSDate *)today {
     NSDate *now = [self locationTime:today];
     
-    NSArray *weekdays = [NSArray arrayWithObjects:@"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
+    NSArray *weekdays = [NSArray arrayWithObjects:@"",@"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSInteger unitFlags = kCFCalendarUnitWeekday;
@@ -110,18 +110,18 @@
 /**
  *  获取星座
  *
- *  @param in_date 输入时间
+ *  @param date 输入时间
  *
  *  @return 星座字符串
  */
-- (NSString *)getXingzuo:(NSDate *)in_date
+- (NSString *)getXingzuo:(NSDate *)date
 {
     //计算星座
     NSString *retStr=@"";
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MM"];
     int i_month=0;
-    NSString *theMonth = [dateFormat stringFromDate:in_date];
+    NSString *theMonth = [dateFormat stringFromDate:date];
     if([[theMonth substringToIndex:0] isEqualToString:@"0"]){
         i_month = [[theMonth substringFromIndex:1] intValue];
     }else{
@@ -130,7 +130,7 @@
     
     [dateFormat setDateFormat:@"dd"];
     int i_day=0;
-    NSString *theDay = [dateFormat stringFromDate:in_date];
+    NSString *theDay = [dateFormat stringFromDate:date];
     if([[theDay substringToIndex:0] isEqualToString:@"0"]){
         i_day = [[theDay substringFromIndex:1] intValue];
     }else{

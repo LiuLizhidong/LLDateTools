@@ -6,9 +6,12 @@
 //  Copyright © 2016年 刘李治东. All rights reserved.
 //
 
+#import "LLDateTools.h"
 #import "ViewController.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *logTextView;
 
 @end
 
@@ -16,7 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)locationTimeClicked:(id)sender {
+    NSDate *now = [[LLDateTools sharedTools] locationTime:[NSDate date]];
+    _logTextView.text = [NSString stringWithFormat:@"%@", now];
+}
+
+- (IBAction)zeroTimeClicked:(id)sender {
+    NSDate *zero = [[LLDateTools sharedTools] zeroToday:[NSDate date]];
+    _logTextView.text = [NSString stringWithFormat:@"%@", zero];
+}
+
+- (IBAction)getWeek:(id)sender {
+    _logTextView.text = [[LLDateTools sharedTools] weekdayStringWithDate:[NSDate date]];
+}
+
+- (IBAction)getDetailsDate:(id)sender {
+    _logTextView.text = [[LLDateTools sharedTools] monthDayStringWithDate:[NSDate date]];
+}
+
+- (IBAction)getConstellation:(id)sender {
+    _logTextView.text = [[LLDateTools sharedTools] getXingzuo:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {

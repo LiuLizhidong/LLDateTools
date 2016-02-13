@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,51 +17,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTD-he-mM8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTD-he-mM8">
                                 <rect key="frame" x="207" y="28" width="186" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="g1P-IY-ka2"/>
+                                    <constraint firstAttribute="width" constant="186" id="y88-6Q-Tfp"/>
+                                </constraints>
                                 <state key="normal" title="获取本地时间">
                                     <color key="titleColor" red="0.018605519023419337" green="1" blue="0.19244143646796308" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="locationTimeClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kwg-iQ-ECg"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68r-EL-yok">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68r-EL-yok">
                                 <rect key="frame" x="207" y="78" width="186" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="dwc-n5-ihx"/>
+                                    <constraint firstAttribute="height" constant="30" id="fNi-aC-SOD"/>
+                                </constraints>
                                 <state key="normal" title="获取本地零点时间">
                                     <color key="titleColor" red="0.018605519019999999" green="1" blue="0.19244143650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="zeroTimeClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdC-UD-HVv"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWG-6I-gUK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWG-6I-gUK">
                                 <rect key="frame" x="207" y="129" width="186" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="czt-Lj-PHL"/>
+                                    <constraint firstAttribute="height" constant="30" id="rjO-T9-OGr"/>
+                                </constraints>
                                 <state key="normal" title="获取星期">
                                     <color key="titleColor" red="0.018605519019999999" green="1" blue="0.19244143650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="getWeek:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F09-FY-GT4"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeJ-4T-NSM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeJ-4T-NSM">
                                 <rect key="frame" x="207" y="178" width="186" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CAa-Wb-Wc7"/>
+                                    <constraint firstAttribute="width" constant="186" id="OOs-RD-1wj"/>
+                                </constraints>
                                 <state key="normal" title="获取年月日">
                                     <color key="titleColor" red="0.018605519019999999" green="1" blue="0.19244143650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="getDetailsDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vvZ-Cm-hFF"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4n-5P-dxG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4n-5P-dxG">
                                 <rect key="frame" x="207" y="228" width="186" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="获取本地时间">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="51q-z4-0cC"/>
+                                    <constraint firstAttribute="height" constant="30" id="puv-yu-55U"/>
+                                </constraints>
+                                <state key="normal" title="计算星座">
                                     <color key="titleColor" red="0.018605519019999999" green="1" blue="0.19244143650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="getConstellation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wdc-K3-x7N"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="这里打印输出结果" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OSb-hM-Lud">
-                                <rect key="frame" x="180" y="297" width="240" height="270"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.081942766766834652" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里打印输出结果" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdp-2j-46P">
+                                <rect key="frame" x="189" y="303" width="222" height="162"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="OWw-f7-NBC"/>
+                                    <constraint firstAttribute="width" constant="222" id="fc5-WL-Q78"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wdp-2j-46P" firstAttribute="top" secondItem="z4n-5P-dxG" secondAttribute="bottom" constant="45" id="11e-hc-HPe"/>
+                            <constraint firstItem="wdp-2j-46P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2kc-Sh-TAd"/>
+                            <constraint firstItem="EWG-6I-gUK" firstAttribute="top" secondItem="68r-EL-yok" secondAttribute="bottom" constant="21" id="DHb-cr-eth"/>
+                            <constraint firstItem="z4n-5P-dxG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MUs-D2-0ik"/>
+                            <constraint firstItem="68r-EL-yok" firstAttribute="top" secondItem="TTD-he-mM8" secondAttribute="bottom" constant="20" id="MlF-Pw-6Os"/>
+                            <constraint firstItem="XeJ-4T-NSM" firstAttribute="top" secondItem="EWG-6I-gUK" secondAttribute="bottom" constant="19" id="YLD-3m-6C0"/>
+                            <constraint firstItem="TTD-he-mM8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aSM-t7-5Gi"/>
+                            <constraint firstItem="TTD-he-mM8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="cZP-xL-bEh"/>
+                            <constraint firstItem="z4n-5P-dxG" firstAttribute="top" secondItem="XeJ-4T-NSM" secondAttribute="bottom" constant="20" id="ftN-NJ-m99"/>
+                            <constraint firstItem="XeJ-4T-NSM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPH-el-IHP"/>
+                            <constraint firstItem="68r-EL-yok" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sIR-0T-IlQ"/>
+                            <constraint firstItem="EWG-6I-gUK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yxb-VT-gRh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logTextView" destination="wdp-2j-46P" id="9rb-cN-RzH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

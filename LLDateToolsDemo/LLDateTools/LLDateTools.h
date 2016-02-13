@@ -19,5 +19,7 @@
 - (NSString*)weekdayStringWithDate:(NSDate *)today;
 // 获取今日年月日
 - (NSString *)monthDayStringWithDate:(NSDate *)today;
+// 获取星座
+- (NSString *)getXingzuo:(NSDate *)date;
 
 @end

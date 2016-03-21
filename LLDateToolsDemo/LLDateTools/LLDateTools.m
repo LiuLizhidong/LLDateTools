@@ -28,7 +28,7 @@
  *
  *  @return 本地时间
  */
-- (NSDate *)locationTime:(NSDate *)today {
++ (NSDate *)locationTime:(NSDate *)today {
     NSTimeZone *zone = [NSTimeZone systemTimeZone];
     NSInteger interval = [zone secondsFromGMTForDate:today];
     NSDate *locationTime = [today dateByAddingTimeInterval:interval];
@@ -42,7 +42,7 @@
  *
  *  @return 零点时间
  */
-- (NSDate *)zeroToday:(NSDate *)today {
++ (NSDate *)zeroToday:(NSDate *)today {
     NSDate *now = [self locationTime:today];
     
     // 创建日历
@@ -73,7 +73,7 @@
  *
  *  @return 星期字符串
  */
-- (NSString*)weekdayStringWithDate:(NSDate *)today {
++ (NSString*)weekdayStringWithDate:(NSDate *)today {
     NSDate *now = [self locationTime:today];
     
     NSArray *weekdays = [NSArray arrayWithObjects:@"",@"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
@@ -92,7 +92,7 @@
  *
  *  @return 返回年月日字符串
  */
-- (NSString *)monthDayStringWithDate:(NSDate *)today {
++ (NSString *)monthDayStringWithDate:(NSDate *)today {
     NSDate *now = [self locationTime:today];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -114,7 +114,7 @@
  *
  *  @return 星座字符串
  */
-- (NSString *)getXingzuo:(NSDate *)date
++ (NSString *)getXingzuo:(NSDate *)date
 {
     //计算星座
     NSString *retStr=@"";

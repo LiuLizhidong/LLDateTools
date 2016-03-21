@@ -22,25 +22,25 @@
 }
 
 - (IBAction)locationTimeClicked:(id)sender {
-    NSDate *now = [[LLDateTools sharedTools] locationTime:[NSDate date]];
+    NSDate *now = [LLDateTools locationTime:[NSDate date]];
     _logTextView.text = [NSString stringWithFormat:@"%@", now];
 }
 
 - (IBAction)zeroTimeClicked:(id)sender {
-    NSDate *zero = [[LLDateTools sharedTools] zeroToday:[NSDate date]];
+    NSDate *zero = [LLDateTools zeroToday:[NSDate date]];
     _logTextView.text = [NSString stringWithFormat:@"%@", zero];
 }
 
 - (IBAction)getWeek:(id)sender {
-    _logTextView.text = [[LLDateTools sharedTools] weekdayStringWithDate:[NSDate date]];
+    _logTextView.text = [LLDateTools weekdayStringWithDate:[NSDate date]];
 }
 
 - (IBAction)getDetailsDate:(id)sender {
-    _logTextView.text = [[LLDateTools sharedTools] monthDayStringWithDate:[NSDate date]];
+    _logTextView.text = [LLDateTools monthDayStringWithDate:[NSDate date]];
 }
 
 - (IBAction)getConstellation:(id)sender {
-    _logTextView.text = [[LLDateTools sharedTools] getXingzuo:[NSDate date]];
+    _logTextView.text = [LLDateTools getXingzuo:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,14 +12,14 @@
 
 + (instancetype)sharedTools;
 // 转换本地时间
-- (NSDate *)locationTime:(NSDate *)today;
++ (NSDate *)locationTime:(NSDate *)today;
 // 获取今日零点时间
-- (NSDate *)zeroToday:(NSDate *)today;
++ (NSDate *)zeroToday:(NSDate *)today;
 // 获取今日周几
-- (NSString*)weekdayStringWithDate:(NSDate *)today;
++ (NSString*)weekdayStringWithDate:(NSDate *)today;
 // 获取今日年月日
-- (NSString *)monthDayStringWithDate:(NSDate *)today;
++ (NSString *)monthDayStringWithDate:(NSDate *)today;
 // 获取星座
-- (NSString *)getXingzuo:(NSDate *)date;
++ (NSString *)getXingzuo:(NSDate *)date;
 
 @end

@@ -6,6 +6,17 @@
 //  Copyright © 2016年 刘李治东. All rights reserved.
 //
 
+//是否为ios8
+#ifndef IOS8
+#define IOS8            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0?YES:NO)
+#endif
+
+//是否为ios7
+#ifndef IOS7
+#define IOS7            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0?YES:NO)
+#endif
+
+#import <UIKit/UIKit.h>
 #import "LLDateTools.h"
 
 @implementation LLDateTools
@@ -19,6 +30,86 @@
         }
     });
     return instance;
+}
+
+// 转Unix时间戳字符串
+NSString* formatUnixTime(NSDate* date) {
+    return [NSString stringWithFormat:@"%lld", (long long)([date timeIntervalSince1970]*1000)];
+}
+
+// 转Unix时间
+NSNumber* toUnixTime(NSDate *date) {
+    return @((long long)([date timeIntervalSince1970]*1000));
+}
+
+// 是否为今天
+BOOL isToday(NSDate* time) {
+    if (time == nil) {
+        return NO;
+    }
+    if (!IOS8) {
+        NSDate *today = [NSDate date];
+        if (ABS(today.timeIntervalSinceReferenceDate - time.timeIntervalSinceReferenceDate) > 3600 * 24) {
+            return NO;
+        }
+        NSCalendar* cal = [NSCalendar currentCalendar];
+        NSDateComponents* components1 = [cal components:NSCalendarUnitDay fromDate:today];
+        NSDateComponents* components2 = [cal components:NSCalendarUnitDay fromDate:time];
+        return components1.day == components2.day;
+    } else {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
+        return [[NSCalendar currentCalendar] isDateInToday:time];
+#pragma clang diagnostic pop
+    }
+}
+
+// 是否闰年
+BOOL isLeapYear(NSInteger year) {
+    BOOL flag = NO;
+    CGFloat f1 = year / 4.0f;
+    CGFloat f2 = (int) f1 * 4 / 4;
+    // 能被4整除
+    if (f1 - f2 == 0) {
+        f1 = year / 100.0f;
+        f2 = (int) f1 * 100 / 100;
+        // 能被100整除
+        if (f1 - f2 == 0) {
+            f1 = year / 400.0f;
+            f2 = (int) f1 * 400 / 400;
+            // 能被400整除
+            if (f1 - f2 == 0) {
+                flag = YES;
+            }
+        } else {
+            flag = YES;
+        }
+    }
+    
+    return flag;
+}
+
+// 指定月份天数（传入年月值）
+NSInteger daysOfMonth(NSInteger month, NSInteger year) {
+    switch (month) {
+        case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+            return 31;
+        case 4:case 6:case 9:case 11:
+            return 30;
+        default:
+            if (isLeapYear(year)) {
+                return 29;
+            } else {
+                return 28;
+            }
+    }
+}
+
+// 指定日期当月天数（传入NSDate）
+NSInteger daysOfMonthFromTime(NSDate* time) {
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [calendar setTimeZone:[NSTimeZone localTimeZone]];
+    return [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:time].length;
 }
 
 /**
@@ -105,6 +196,22 @@
     
     NSString *dates = [NSString stringWithFormat:@"%ld年%ld月%ld日", year, month, day];
     return dates;
+}
+
+/**
+ *  获取月份
+ *
+ *  @param date 输入时间
+ *
+ *  @return 月份int类型
+ */
++ (int)getMonthFromDate:(NSDate *)date {
+    NSCalendar *cal = [NSCalendar currentCalendar];
+
+    NSDateComponents *dd = [cal components:NSCalendarUnitMonth fromDate:date];
+    int moonth = (int)[dd month];
+
+    return moonth;
 }
 
 /**
